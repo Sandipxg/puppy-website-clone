@@ -22,8 +22,8 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Page curtain transition, paw cursor
 
 ## PR 4 — Home: hero `feat/home-hero`
-- [ ] Hero copy, sunrise glow, puppy lineup arches, quilt scallop, peeking Teddy
-- [ ] Lineup duck/pop rotation, hover name tags
+- [x] Hero copy, sunrise glow, puppy lineup arches, quilt scallop, peeking Teddy
+- [x] Lineup duck/pop rotation, hover name tags
 
 ## PR 5 — Home: meet the pups & two ways `feat/home-meet-the-pups`
 - [ ] Pinned horizontal street of doors with floor + walking Teddy
