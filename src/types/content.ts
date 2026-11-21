@@ -27,6 +27,10 @@ export type Puppy = {
   status: PuppyStatus | string;
   description: string;
   gallery: GalleryItem[];
+  /** Coat colour, when the breeder recorded it */
+  colour?: string;
+  /** Hand-placed tilt of the sketch card, in degrees */
+  tilt?: number;
   /** Watercolour wash behind the sketch card */
   wash?: string;
   /** "Admit one" ticket copy for puppies who have gone home */

@@ -64,6 +64,9 @@
 @utility text-big {
   font-size: clamp(2rem, 4.2vw, 4rem);
 }
+@utility text-giant {
+  font-size: clamp(3.1rem, 9.4vw, 9.75rem);
+}
 @utility text-huge {
   font-size: clamp(2.6rem, 6.4vw, 6.25rem);
 }

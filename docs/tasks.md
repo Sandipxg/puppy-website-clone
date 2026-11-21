@@ -38,9 +38,10 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [ ] Roaming Teddy: one mascot that walks between scenes as you scroll, leaving paw prints (planned for PR 10)
 
 ## PR 7 — Puppies `feat/puppies`
-- [ ] Sketchbook listing + URL filters
-- [ ] Puppy profile pages (gallery, details, enquiry)
-- [ ] Gone home tickets
+- [x] Sketchbook listing + URL filters (where / breed / boy or girl)
+- [x] Puppy profile pages (gallery + viewer, details tag, way home, enquiry letter, prev/next) — all 42 prerendered
+- [x] Gone home "admit one" tickets
+- [x] Enquiry validation shared by forms and `/api/enquiry` (honeypot, 422 field errors, WhatsApp hand-off)
 
 ## PR 8 — Families, how it works, FAQ `feat/families-how-faq`
 ## PR 9 — Contact `feat/contact`

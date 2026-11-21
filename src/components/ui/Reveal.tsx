@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
 /**
  * Arms every `[data-reveal]` element inside it once JavaScript is running, then
@@ -12,11 +12,15 @@ export function Reveal({
   className,
   as: Tag = "div",
   rootMargin = "0px 0px -12% 0px",
+  labelledBy,
+  style,
 }: {
   children: ReactNode;
   className?: string;
-  as?: "div" | "section";
+  as?: "div" | "section" | "article";
   rootMargin?: string;
+  labelledBy?: string;
+  style?: CSSProperties;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -40,7 +44,7 @@ export function Reveal({
     return () => io.disconnect();
   }, [rootMargin]);
   return (
-    <Tag ref={ref} className={className}>
+    <Tag ref={ref} className={className} aria-labelledby={labelledBy} style={style}>
       {children}
     </Tag>
   );
