@@ -26,8 +26,8 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Lineup duck/pop rotation, hover name tags
 
 ## PR 5 — Home: meet the pups & two ways `feat/home-meet-the-pups`
-- [ ] Pinned horizontal street of doors with floor + walking Teddy
-- [ ] Signpost, showroom window, flight path
+- [x] Pinned horizontal street of doors with floor + walking Teddy
+- [x] Signpost, showroom window, flight path
 
 ## PR 6 — Home: journey → porch `feat/home-journey-to-porch`
 - [ ] WhatsApp phone story with sticky steps
