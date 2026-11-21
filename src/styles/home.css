@@ -1995,3 +1995,29 @@ html[data-pup] .tp-home[data-visited="true"] .tp-house__door {
     display: none;
   }
 }
+
+/* Teddy trots on the spot while the street scrolls past (legs swing around the hip). */
+.tp-meet__teddy [data-p="bf"],
+.tp-meet__teddy [data-p="bn"],
+.tp-meet__teddy [data-p="ff"],
+.tp-meet__teddy [data-p="fn"] {
+  transform-box: view-box;
+}
+.tp-meet__teddy [data-p="bf"] { transform-origin: 94px 180px; }
+.tp-meet__teddy [data-p="bn"] { transform-origin: 110px 182px; }
+.tp-meet__teddy [data-p="ff"] { transform-origin: 168px 180px; }
+.tp-meet__teddy [data-p="fn"] { transform-origin: 186px 182px; }
+.tp-meet[data-walking] .tp-meet__teddy :is([data-p="fn"], [data-p="bf"]) {
+  animation: 0.32s ease-in-out infinite alternate tp-runner-leg-a;
+}
+.tp-meet[data-walking] .tp-meet__teddy :is([data-p="ff"], [data-p="bn"]) {
+  animation: 0.32s ease-in-out infinite alternate tp-runner-leg-b;
+}
+.tp-meet[data-walking] .tp-meet__teddy [data-p="tail"] {
+  transform-box: view-box;
+  transform-origin: 84px 150px;
+  animation: 0.22s ease-in-out infinite alternate tp-runner-wag;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-meet__teddy [data-p] { animation: none !important; }
+}
