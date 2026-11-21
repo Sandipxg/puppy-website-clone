@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+// Self-hosted variable fonts (all axes) — no runtime request to Google Fonts.
+import "@fontsource-variable/fraunces/full.css";
+import "@fontsource-variable/figtree/index.css";
+import "@fontsource-variable/shantell-sans/full.css";
 import "./globals.css";
 
 export const metadata: Metadata = {

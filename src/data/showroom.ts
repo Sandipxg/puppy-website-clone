@@ -1,0 +1,37 @@
+/* Content data. Source of truth for every page; edit here to change the site. */
+import type { Img } from "@/types/content";
+
+export const showroom: Img[] = [
+  {
+    "src": "/media/showroom/01.jpg",
+    "width": 1080,
+    "height": 1920,
+    "color": "#685848",
+    "alt": "A tiny apricot teddy bear puppy held up in the TeddyPups showroom",
+    "focal": "54.3% 48.3%"
+  },
+  {
+    "src": "/media/showroom/02.jpg",
+    "width": 1080,
+    "height": 1920,
+    "color": "#685848",
+    "alt": "The apricot teddy bear puppy from our showroom, close up",
+    "focal": "46.0% 44.4%"
+  },
+  {
+    "src": "/media/showroom/03.jpg",
+    "width": 1080,
+    "height": 1920,
+    "color": "#080818",
+    "alt": "The apricot teddy bear puppy from our showroom, looking up",
+    "focal": "43.7% 40.2%"
+  },
+  {
+    "src": "/media/showroom/04.jpg",
+    "width": 1080,
+    "height": 1920,
+    "color": "#685848",
+    "alt": "The apricot teddy bear puppy from our showroom, held up to say hello",
+    "focal": "45.3% 44.4%"
+  }
+];
