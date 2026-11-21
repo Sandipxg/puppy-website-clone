@@ -10,7 +10,8 @@ import { Ribbon } from "@/components/puppy/Ribbon";
 import { Reveal } from "@/components/ui/Reveal";
 import { puppies } from "@/data/puppies";
 import { available, cover, getPuppy, goneHome, seoFor } from "@/lib/puppies";
-import { external, site } from "@/lib/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { external, site, siteUrl } from "@/lib/site";
 import type { Puppy } from "@/types/content";
 
 const COMES_WITH = [
@@ -40,6 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
+    alternates: { canonical: `/puppies/${p.slug}` },
     openGraph: { title, description, images: [image] },
     twitter: { title, description, images: [image] },
   };
@@ -227,6 +229,16 @@ export default async function PuppyPage({ params }: { params: Promise<{ slug: st
           </nav>
         </div>
       </Reveal>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Puppies", item: `${siteUrl}/puppies` },
+            { "@type": "ListItem", position: 2, name: p.name, item: `${siteUrl}/puppies/${p.slug}` },
+          ],
+        }}
+      />
     </div>
   );
 }

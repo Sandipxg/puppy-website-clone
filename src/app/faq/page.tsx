@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Questions & answers",
   description:
     "Answers about TeddyPups puppies: health checks and vaccinations, meeting local puppies, imported teacup breeds and delivery.",
+  alternates: { canonical: "/faq" },
 };
 
 export default function FaqPage() {

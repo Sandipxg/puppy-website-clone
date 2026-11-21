@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Visit & contact",
   description:
     "Visit TeddyPups in Downtown Dubai or get in touch on WhatsApp, by phone or email.",
+  alternates: { canonical: "/contact" },
 };
 
 const SKYLINE =

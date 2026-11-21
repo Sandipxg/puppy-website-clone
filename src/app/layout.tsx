@@ -8,23 +8,23 @@ import { Curtain } from "@/components/layout/Curtain";
 import { ActionBar, Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
+  applicationName: "TeddyPups U.A.E.",
   title: {
     default: "TeddyPups U.A.E. — Premium teacup puppies in Dubai",
     template: "%s | TeddyPups U.A.E.",
   },
   description:
     "Teddy bear and teacup puppies in Dubai. Meet local puppies in our Downtown Dubai showroom or bring home a rare breed imported from trusted breeders.",
-  icons: { icon: "/brand/logo.png", apple: "/brand/logo.png" },
   openGraph: {
     type: "website",
     siteName: "TeddyPups U.A.E.",
     locale: "en_AE",
-    images: ["/brand/logo.png"],
   },
-  twitter: { card: "summary_large_image", images: ["/brand/logo.png"] },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = { themeColor: "#fffdf8" };

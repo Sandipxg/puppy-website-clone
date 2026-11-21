@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Happy families",
   description:
     "Real photos shared by TeddyPups families after welcoming their new puppy home.",
+  alternates: { canonical: "/happy-families" },
 };
 
 export default function HappyFamiliesPage() {

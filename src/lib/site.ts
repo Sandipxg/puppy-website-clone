@@ -1,4 +1,11 @@
 /** Business details shown across the site. */
+/** Public origin of the site: NEXT_PUBLIC_SITE_URL, else Vercel's production domain, else local dev. */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
 export const site = {
   name: "TeddyPups U.A.E.",
   shortName: "TeddyPups",

@@ -9,6 +9,7 @@ import { cover, goneHome } from "@/lib/puppies";
 export const metadata: Metadata = {
   title: "Gone home",
   description: "TeddyPups puppies who have already joined their families.",
+  alternates: { canonical: "/gone-home" },
 };
 
 const TILTS = [-1.4, 1.1, -0.6, 1.6, -1.1, 0.8];
