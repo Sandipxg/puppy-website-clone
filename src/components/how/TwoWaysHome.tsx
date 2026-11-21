@@ -207,7 +207,7 @@ export function TwoWaysHome() {
             <span className="font-scrawl tp-postcard__to tp-postcard__to--left">Downtown Dubai</span>
           </div>
         </div>
-        {at === 0 && <Steps steps={LOCAL_STEPS} />}
+        <Steps steps={LOCAL_STEPS} />
       </div>
 
       <div role="tabpanel" id="panel-imported" aria-labelledby="tab-imported" className="tp-journey" hidden={at !== 1}>
@@ -242,7 +242,7 @@ export function TwoWaysHome() {
             <span className="font-scrawl tp-postcard__to">Dubai</span>
           </div>
         </div>
-        {at === 1 && <Steps steps={IMPORTED_STEPS} />}
+        <Steps steps={IMPORTED_STEPS} />
       </div>
     </section>
   );

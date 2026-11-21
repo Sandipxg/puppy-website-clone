@@ -9,7 +9,7 @@ import { Gallery } from "@/components/puppy/Gallery";
 import { Ribbon } from "@/components/puppy/Ribbon";
 import { Reveal } from "@/components/ui/Reveal";
 import { puppies } from "@/data/puppies";
-import { available, cover, getPuppy, goneHome } from "@/lib/puppies";
+import { available, cover, getPuppy, goneHome, seoFor } from "@/lib/puppies";
 import { external, site } from "@/lib/site";
 import type { Puppy } from "@/types/content";
 
@@ -34,10 +34,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const p = getPuppy((await params).slug);
   if (!p) return { title: "Puppy not found", robots: { index: false } };
+  const { title, description } = seoFor(p);
+  const img = cover(p);
+  const image = { url: img.src, width: img.width, height: img.height, alt: img.alt };
   return {
-    title: `${p.name}, ${p.breed} puppy`,
-    description: p.description,
-    openGraph: { images: [cover(p).src] },
+    title,
+    description,
+    openGraph: { title, description, images: [image] },
+    twitter: { title, description, images: [image] },
   };
 }
 

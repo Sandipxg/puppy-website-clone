@@ -13,18 +13,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
     default: "TeddyPups U.A.E. — Premium teacup puppies in Dubai",
-    template: "%s · TeddyPups U.A.E.",
+    template: "%s | TeddyPups U.A.E.",
   },
   description:
-    "Meet your new best friend in our Dubai showroom, or order a rare miniature breed from trusted breeders worldwide.",
+    "Teddy bear and teacup puppies in Dubai. Meet local puppies in our Downtown Dubai showroom or bring home a rare breed imported from trusted breeders.",
   icons: { icon: "/brand/logo.png", apple: "/brand/logo.png" },
   openGraph: {
     type: "website",
     siteName: "TeddyPups U.A.E.",
     locale: "en_AE",
-    images: ["/media/showroom/01.jpg"],
+    images: ["/brand/logo.png"],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/brand/logo.png"] },
 };
 
 export const viewport: Viewport = { themeColor: "#fffdf8" };

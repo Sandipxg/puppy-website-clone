@@ -10,7 +10,7 @@ import { external, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "Meet a puppy in our Downtown Dubai showroom or order a premium breed from abroad — how adoption, delivery and collection work at TeddyPups.",
+    "Meet a local puppy in our Downtown Dubai showroom or reserve a premium teacup breed imported for you — every step, from choosing to coming home.",
 };
 
 const SECTIONS = [
@@ -189,7 +189,7 @@ export default function HowItWorksPage() {
               <h2 id="care-title" className="font-plush text-big">
                 Unique and high quality puppies
               </h2>
-              <p className="text-lede mt-5 max-w-[65ch] text-cocoa-soft">
+              <p className="text-lede measure mt-5 text-cocoa-soft">
                 When you choose TeddyPups, you can trust that you&apos;re getting a puppy of the highest quality. We also
                 provide guidance and support to new pet owners, offering advice on training, nutrition, and general care to
                 ensure a smooth transition for you and your new furry friend.

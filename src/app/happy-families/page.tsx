@@ -6,7 +6,8 @@ import { families } from "@/lib/families";
 
 export const metadata: Metadata = {
   title: "Happy families",
-  description: "Moments shared by TeddyPups families after welcoming their new puppy home.",
+  description:
+    "Real photos shared by TeddyPups families after welcoming their new puppy home.",
 };
 
 export default function HappyFamiliesPage() {

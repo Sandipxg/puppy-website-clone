@@ -25,6 +25,18 @@ export function doorMeta(p: Puppy): string {
   return `${head}, ${p.age}${hasVideo(p) ? ", with video" : ""}`;
 }
 
+/** Page title, description and share-image alt for a puppy profile. */
+export function seoFor(p: Puppy) {
+  const named = p.name !== p.breed;
+  const sex = p.sex.toLowerCase();
+  const where = p.origin === "imported" ? "imported" : "in Dubai";
+  const media = hasVideo(p) ? "Real photos and video" : "Real photos";
+  return {
+    title: named ? `${p.name}, ${p.breed} puppy` : `${p.breed} puppy (${sex})`,
+    description: `Meet ${named ? p.name : `this ${p.breed}`}: ${p.breed}, ${sex}, ${p.age} old, ${where}. ${media} from TeddyPups U.A.E.`,
+  };
+}
+
 /* ---------- Listing filters (kept in the URL so links are shareable) ---------- */
 
 export type Filters = {

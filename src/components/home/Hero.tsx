@@ -102,7 +102,7 @@ function Lineup() {
               onBlur={() => setTag(null)}
             >
               <span className="tp-lineup__photo">
-                <Photo img={cover(p)} sizes="180px" priority={i < 3} />
+                <Photo img={cover(p)} sizes="11rem" priority={i < 3} />
               </span>
             </Link>
           </li>
@@ -120,7 +120,7 @@ function Lineup() {
       {/* Preload the next puppy so the pop-up never shows an empty arch. */}
       {waiting && (
         <span aria-hidden="true" className="tp-lineup__wings">
-          <Photo img={cover(waiting)} alt="" sizes="180px" />
+          <Photo img={cover(waiting)} alt="" sizes="11rem" />
         </span>
       )}
     </>

@@ -5,7 +5,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "Questions & answers",
-  description: "Vaccinations, visiting the showroom, imports, delivery and more — answers to common questions about TeddyPups puppies.",
+  description:
+    "Answers about TeddyPups puppies: health checks and vaccinations, meeting local puppies, imported teacup breeds and delivery.",
 };
 
 export default function FaqPage() {
