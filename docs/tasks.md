@@ -9,11 +9,11 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Clean folder structure and README
 
 ## PR 2 — Design system & content `feat/design-system`
-- [ ] Theme tokens, fonts (Fraunces, Figtree, Shantell Sans) via next/font
-- [ ] Base, component and area stylesheets in cascade layers
-- [ ] Typed content: puppies (15 available, 27 gone home), families (64), FAQ, showroom
-- [ ] Media library under `public/media`
-- [ ] Shared primitives: Photo, Paw icon, Star, Pup mascot (all poses)
+- [x] Theme tokens, fonts (Fraunces, Figtree, Shantell Sans) (self-hosted, Fontsource)
+- [x] Base, component and area stylesheets in cascade layers
+- [x] Typed content: puppies (15 available, 27 gone home), families (64), FAQ, showroom
+- [x] Media library under `public/media`
+- [x] Shared primitives: Photo, Paw icon, Star, Pup mascot (all poses)
 
 ## PR 3 — Layout shell `feat/layout-shell`
 - [ ] Header with scalloped hem, active paw, hide-on-scroll
