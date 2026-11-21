@@ -3,6 +3,7 @@ export const site = {
   name: "TeddyPups U.A.E.",
   shortName: "TeddyPups",
   tagline: "every puppy is family",
+  copyrightYear: 2026,
   phoneDisplay: "+971 50 000 0000",
   phoneHref: "tel:+971500000000",
   email: "info@instabizweb.com",

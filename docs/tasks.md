@@ -16,10 +16,10 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Shared primitives: Photo, Paw icon, Star, Pup mascot (all poses)
 
 ## PR 3 — Layout shell `feat/layout-shell`
-- [ ] Header with scalloped hem, active paw, hide-on-scroll
-- [ ] Mobile menu dialog (circle reveal, staggered links)
-- [ ] Footer (hill, stars, moon, basket pup) + phone action bar
-- [ ] Page curtain transition, paw cursor
+- [x] Header with scalloped hem, active paw, hide-on-scroll
+- [x] Mobile menu dialog (circle reveal, staggered links)
+- [x] Footer (hill, stars, moon, basket pup) + phone action bar
+- [x] Page curtain transition, paw cursor
 
 ## PR 4 — Home: hero `feat/home-hero`
 - [ ] Hero copy, sunrise glow, puppy lineup arches, quilt scallop, peeking Teddy
