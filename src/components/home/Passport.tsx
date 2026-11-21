@@ -4,7 +4,7 @@ import { Scene } from "./Scene";
 
 const icon = { fill: "none", stroke: "currentColor", strokeWidth: 3, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 
-type Stamp = {
+export type Stamp = {
   title: string;
   text: string;
   shape: "round" | "ticket" | "oval" | "scallop";
@@ -68,6 +68,30 @@ const STAMPS: Stamp[] = [
   },
 ];
 
+/** One passport entry: an inked stamp that thumps on when scrolled into view, with a caption. */
+export function StampEntry({ stamp, index }: { stamp: Stamp; index: number }) {
+  return (
+    <li
+      className="tp-entry"
+      style={{ "--ink-stamp": stamp.ink, "--tilt": `${stamp.tilt}deg`, "--i": index } as CSSProperties}
+    >
+      <span className={`tp-stamp tp-stamp--${stamp.shape}`}>
+        <svg viewBox="0 0 64 64" className="tp-stamp__icon" aria-hidden="true">
+          {stamp.icon}
+        </svg>
+        <span className="tp-stamp__title font-plush">{stamp.title}</span>
+      </span>
+      <p className="tp-entry__text">{stamp.text}</p>
+    </li>
+  );
+}
+
+/** The four stamp designs (shape, ink, tilt, icon), reused by "How it works". */
+export const STAMP_STYLES = (i: number) => {
+  const { shape, ink, tilt, icon } = STAMPS[i % STAMPS.length];
+  return { shape, ink, tilt, icon };
+};
+
 /** The Dubai skyline at sunset, where the passport's honey sky turns to dusk. */
 export function Horizon() {
   return (
@@ -97,19 +121,7 @@ export function Passport() {
           </div>
           <ul className="tp-book__page tp-book__page--right">
             {STAMPS.map((s, i) => (
-              <li
-                key={s.title}
-                className="tp-entry"
-                style={{ "--ink-stamp": s.ink, "--tilt": `${s.tilt}deg`, "--i": i } as CSSProperties}
-              >
-                <span className={`tp-stamp tp-stamp--${s.shape}`}>
-                  <svg viewBox="0 0 64 64" className="tp-stamp__icon" aria-hidden="true">
-                    {s.icon}
-                  </svg>
-                  <span className="tp-stamp__title font-plush">{s.title}</span>
-                </span>
-                <p className="tp-entry__text">{s.text}</p>
-              </li>
+              <StampEntry key={s.title} stamp={s} index={i} />
             ))}
           </ul>
         </div>
