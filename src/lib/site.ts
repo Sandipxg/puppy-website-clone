@@ -8,6 +8,7 @@ export const site = {
   phoneHref: "tel:+971500000000",
   email: "info@instabizweb.com",
   address: "Downtown Dubai, United Arab Emirates",
+  maps: "https://www.instabizweb.com/",
   whatsapp:
     "https://wa.me/919898124987?text=Hi%20Insta%20Biz%20Web%2C%20I'd%20like%20to%20discuss%20a%20project.",
   social: [

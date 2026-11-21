@@ -35,7 +35,7 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Dusk families wall, night FAQ, porch with opening door
 
 - [ ] Showroom video for the chat clip (needs downloading from the live site)
-- [ ] Roaming Teddy: one mascot that walks between scenes as you scroll, leaving paw prints (planned for PR 10)
+- [x] Roaming Teddy: one mascot that walks between scenes as you scroll (PR 10)
 
 ## PR 7 — Puppies `feat/puppies`
 - [x] Sketchbook listing + URL filters (where / breed / boy or girl)
@@ -48,4 +48,17 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] How it works: In Dubai / Imported tab switch with postcards + steps, promise stamps, delivery, why us
 - [x] FAQ corkboard: pinned notes that unfold, live search with highlights, Teddy's ?→! bubble
 ## PR 9 — Contact `feat/contact`
+- [x] Fill-in-the-blanks letter form with inline validation summary
+- [x] Seal → post animation (envelope into post box) and thank-you note
+- [x] WhatsApp / call / email details and the Downtown Dubai shopfront card
+- [x] "Lost" poster 404 page with tear-off tabs
 ## PR 10 — QA & polish `chore/qa-polish`
+- [x] Roaming Teddy on the home page (fixed layer, eases between poses, hides behind quilt/basket)
+- [x] Section heights match the reference at 1440 × 900 (meet 4126 vs 4109px, others within 2px)
+- [x] Every page at 1440 and 390: no console errors, no horizontal overflow
+- [x] Forms + API tested (400 / 422 / honeypot / success)
+- [x] sitemap.xml, robots.txt, Open Graph + Twitter metadata, `.env.example`
+
+## Open items
+- [ ] Add the showroom video file at `public/media/showroom/showroom-video.mp4` (the chat clip shows its poster until then)
+- [ ] Set `NEXT_PUBLIC_SITE_URL` and deploy (Vercel: import repo, no config needed)

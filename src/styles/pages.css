@@ -2156,3 +2156,8 @@
     animation: none;
   }
 }
+
+/* The thank-you post box shows its flag raised. */
+.tp-post__box--sent .tp-post__flag {
+  rotate: 0deg;
+}
