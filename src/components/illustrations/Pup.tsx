@@ -6,7 +6,7 @@
  * poses is just interpolating these numbers.
  */
 
-export type PupPose = "peek" | "walk" | "sit" | "bow" | "snug";
+export type PupPose = "peek" | "walk" | "sit" | "bow" | "snug" | "sniff";
 
 type PoseSpec = {
   shadow: number;
@@ -72,6 +72,19 @@ const POSES: Record<PupPose, PoseSpec> = {
     head: { x: 14, y: 30, rotate: 0 },
     ears: [0, 0],
     face: "happy",
+    tongue: 1,
+    ledge: 0,
+  },
+  sniff: {
+    shadow: 0.12,
+    body: { y: 0, rotate: 7, opacity: 1 },
+    backLegs: 1,
+    front: [0, 0],
+    tail: -6,
+    haunch: { y: 0, opacity: 0 },
+    head: { x: 16, y: 32, rotate: 9 },
+    ears: [0, 0],
+    face: "open",
     tongue: 1,
     ledge: 0,
   },

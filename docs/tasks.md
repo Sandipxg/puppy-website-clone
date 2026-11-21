@@ -48,4 +48,8 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] How it works: In Dubai / Imported tab switch with postcards + steps, promise stamps, delivery, why us
 - [x] FAQ corkboard: pinned notes that unfold, live search with highlights, Teddy's ?→! bubble
 ## PR 9 — Contact `feat/contact`
+- [x] Fill-in-the-blanks letter form with inline validation summary
+- [x] Seal → post animation (envelope into post box) and thank-you note
+- [x] WhatsApp / call / email details and the Downtown Dubai shopfront card
+- [x] "Lost" poster 404 page with tear-off tabs
 ## PR 10 — QA & polish `chore/qa-polish`
