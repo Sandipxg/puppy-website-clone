@@ -44,5 +44,8 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Enquiry validation shared by forms and `/api/enquiry` (honeypot, 422 field errors, WhatsApp hand-off)
 
 ## PR 8 — Families, how it works, FAQ `feat/families-how-faq`
+- [x] Happy families: masonry polaroid wall (64), paw-pat bounce-in, viewer with arrow keys
+- [x] How it works: In Dubai / Imported tab switch with postcards + steps, promise stamps, delivery, why us
+- [x] FAQ corkboard: pinned notes that unfold, live search with highlights, Teddy's ?→! bubble
 ## PR 9 — Contact `feat/contact`
 ## PR 10 — QA & polish `chore/qa-polish`
