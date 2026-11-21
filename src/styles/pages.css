@@ -2123,3 +2123,36 @@
     width: 86%;
   }
 }
+
+/* Cards settle in whenever the filter result changes. */
+@keyframes tp-sketch-settle {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+}
+.tp-sketches__item {
+  animation: tp-sketch-settle 0.5s var(--ease-pounce) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-sketches__item {
+    animation: none;
+  }
+}
+
+/* Profile gallery: each new page wipes in from the spine. */
+@keyframes tp-page-turn {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: perspective(1400px) rotateY(-8deg);
+  }
+}
+.tp-page-turn {
+  transform-origin: 0% 50%;
+  animation: tp-page-turn 0.55s var(--ease-silk) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-page-turn {
+    animation: none;
+  }
+}

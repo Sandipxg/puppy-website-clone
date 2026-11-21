@@ -4,6 +4,7 @@ import type { Puppy } from "@/types/content";
 export const puppies: Puppy[] = [
   {
     "slug": "maltipoo-max-male",
+    "tilt": 0.36,
     "name": "Max",
     "breed": "Maltipoo",
     "sex": "Boy",
@@ -38,6 +39,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "korean-teacup-maltipoo-female",
+    "tilt": -0.71,
     "name": "Korean Teacup Maltipoo",
     "breed": "Korean Teacup Maltipoo",
     "sex": "Girl",
@@ -153,6 +155,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "korean-teacup-poodle-female",
+    "tilt": -0.42,
     "name": "Korean Teacup Poodle",
     "breed": "Korean Teacup Poodle",
     "sex": "Girl",
@@ -202,6 +205,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "maltipoo-cavapoo-male",
+    "tilt": -0.8,
     "name": "Maltipoo & Cavapoo",
     "breed": "Maltipoo & Cavapoo",
     "sex": "Boy",
@@ -245,6 +249,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "toy-poodle-male-female",
+    "tilt": 1.81,
     "name": "Toy Poodle",
     "breed": "Toy Poodle",
     "sex": "Boy & girl",
@@ -285,6 +290,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "maltipoo-female-2",
+    "tilt": 2.12,
     "name": "Maltipoo",
     "breed": "Maltipoo",
     "sex": "Girl",
@@ -370,6 +376,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "pomeranian-female",
+    "tilt": 2.43,
     "name": "Pomeranian",
     "breed": "Pomeranian",
     "sex": "Girl",
@@ -410,6 +417,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "copper-male",
+    "tilt": 1.47,
     "name": "Copper",
     "breed": "Cavapoo",
     "sex": "Boy",
@@ -459,6 +467,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "shitzu-female",
+    "tilt": 0.09,
     "name": "Shih Tzu",
     "breed": "Shih Tzu",
     "sex": "Girl",
@@ -490,6 +499,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "shitzu-male",
+    "tilt": -0.61,
     "name": "Shih Tzu",
     "breed": "Shih Tzu",
     "sex": "Boy",
@@ -521,6 +531,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "maltipoo-female-1",
+    "tilt": 1.07,
     "name": "Maltipoo",
     "breed": "Maltipoo",
     "sex": "Girl",
@@ -570,6 +581,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "maltipoo-female",
+    "tilt": -0.34,
     "name": "Maltipoo",
     "breed": "Maltipoo",
     "sex": "Girl",
@@ -619,6 +631,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "korean-teacup-pomeranian-1",
+    "tilt": 2.24,
     "name": "Korean Teacup Pomeranian",
     "breed": "Korean Teacup Pomeranian",
     "sex": "Girl",
@@ -650,6 +663,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "korean-teacup-pomeranian",
+    "tilt": -1.8,
     "name": "Korean Teacup Pomeranian",
     "breed": "Korean Teacup Pomeranian",
     "sex": "Girl",
@@ -681,6 +695,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "korean-teacup-pomeranian-male",
+    "tilt": 0.19,
     "name": "Korean Teacup Pomeranian",
     "breed": "Korean Teacup Pomeranian",
     "sex": "Boy",
@@ -834,6 +849,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "maltipoo-mia-girl",
+    "colour": "Golden Cream",
     "name": "Mia",
     "breed": "Maltipoo",
     "sex": "Girl",
@@ -938,6 +954,7 @@ export const puppies: Puppy[] = [
   },
   {
     "slug": "blue-marle-pomeranian",
+    "colour": "Marble",
     "name": "Pomeranian",
     "breed": "Pomeranian",
     "sex": "Boy",

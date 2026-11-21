@@ -30,14 +30,18 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Signpost, showroom window, flight path
 
 ## PR 6 — Home: journey → porch `feat/home-journey-to-porch`
-- [ ] WhatsApp phone story with sticky steps
-- [ ] Puppy passport with stamps
-- [ ] Dusk families wall, night FAQ, porch with opening door
+- [x] WhatsApp phone story with sticky steps
+- [x] Puppy passport with stamps
+- [x] Dusk families wall, night FAQ, porch with opening door
+
+- [ ] Showroom video for the chat clip (needs downloading from the live site)
+- [ ] Roaming Teddy: one mascot that walks between scenes as you scroll, leaving paw prints (planned for PR 10)
 
 ## PR 7 — Puppies `feat/puppies`
-- [ ] Sketchbook listing + URL filters
-- [ ] Puppy profile pages (gallery, details, enquiry)
-- [ ] Gone home tickets
+- [x] Sketchbook listing + URL filters (where / breed / boy or girl)
+- [x] Puppy profile pages (gallery + viewer, details tag, way home, enquiry letter, prev/next) — all 42 prerendered
+- [x] Gone home "admit one" tickets
+- [x] Enquiry validation shared by forms and `/api/enquiry` (honeypot, 422 field errors, WhatsApp hand-off)
 
 ## PR 8 — Families, how it works, FAQ `feat/families-how-faq`
 ## PR 9 — Contact `feat/contact`

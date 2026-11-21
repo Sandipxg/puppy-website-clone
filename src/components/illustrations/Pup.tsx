@@ -119,12 +119,12 @@ function Leg({ x, y, rotate = 0, opacity, fill, top, foot }: {
   );
 }
 
-export function Pup({ pose = "sit", label }: { pose?: PupPose; label?: string }) {
+export function Pup({ pose = "sit", label, facing = "right" }: { pose?: PupPose; label?: string; facing?: "left" | "right" }) {
   const p = POSES[pose];
   const a11y = label ? { role: "img", "aria-label": label } : { "aria-hidden": true as const };
   return (
     <svg viewBox="0 0 300 240" focusable="false" style={{ overflow: "visible" }} {...a11y}>
-      <g data-p="root">
+      <g data-p="root" transform={facing === "left" ? "translate(300 0) scale(-1 1)" : undefined}>
         <ellipse data-p="shadow" cx="150" cy="230" rx="92" ry="7" fill={INK} opacity={p.shadow} />
         <g
           data-p="body"
@@ -302,6 +302,26 @@ export function PupStop({
         <Pup pose={pose} label={label} />
         <span aria-hidden="true" className="pup-bubble" data-show="false" />
       </div>
+    </div>
+  );
+}
+
+/** Teddy without a layout "stop" — for cards, booths and tags. */
+export function PupBuddy({
+  pose,
+  className,
+  label,
+  facing = "right",
+}: {
+  pose: PupPose;
+  className?: string;
+  label?: string;
+  facing?: "left" | "right";
+}) {
+  return (
+    <div className={`pup-buddy ${className ?? ""}`} data-facing={facing}>
+      <Pup pose={pose} label={label} facing={facing} />
+      <span aria-hidden="true" className="pup-bubble" data-show="false" />
     </div>
   );
 }
