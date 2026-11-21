@@ -39,6 +39,28 @@ src/
   types/         shared types
 ```
 
+## Pages
+
+| Route | What's there |
+|---|---|
+| `/` | Hero with puppies peeking over a quilt · pinned street of doors · signpost & flight · WhatsApp phone story · puppy passport · dusk photo wall · starry FAQ · porch — with Teddy walking you through it |
+| `/puppies` | Sketchbook cards with URL filters (where / breed / boy or girl) + gone-home strip |
+| `/puppies/[slug]` | 42 storybook profiles: gallery + viewer, details tag, way home, enquiry letter, prev/next |
+| `/gone-home` | "Admit one" tickets |
+| `/happy-families` | 64-photo polaroid wall with viewer |
+| `/how-it-works` | In Dubai / Imported switch, promise stamps, delivery, why us |
+| `/faq` | Corkboard notes with live search |
+| `/contact` | Fill-in-the-blanks letter that gets posted |
+
+## Environment
+
+Copy `.env.example` to `.env.local`:
+
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Absolute URL for metadata, sitemap and robots |
+| `ENQUIRY_WEBHOOK_URL` | Optional — enquiries are POSTed here as JSON (otherwise logged) |
+
 ## Planning docs
 
 | Doc | Purpose |
@@ -50,6 +72,8 @@ src/
 | [PR plan](docs/pr-plan.md) | Milestones and PR template |
 | [Decisions](docs/decisions.md) | Why things are the way they are |
 | [QA checklist](docs/qa-checklist.md) | Walked before every PR |
+| [QA report](docs/qa-report.md) | Latest parity and behaviour results |
+| [Pull requests](docs/pull-requests/) | Title + description for every PR |
 
 ## Credits
 

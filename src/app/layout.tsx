@@ -17,7 +17,14 @@ export const metadata: Metadata = {
   },
   description:
     "Meet your new best friend in our Dubai showroom, or order a rare miniature breed from trusted breeders worldwide.",
-  icons: { icon: "/brand/logo.png" },
+  icons: { icon: "/brand/logo.png", apple: "/brand/logo.png" },
+  openGraph: {
+    type: "website",
+    siteName: "TeddyPups U.A.E.",
+    locale: "en_AE",
+    images: ["/media/showroom/01.jpg"],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = { themeColor: "#fffdf8" };

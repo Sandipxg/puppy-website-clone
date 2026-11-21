@@ -8,7 +8,7 @@
 
 export type PupPose = "peek" | "walk" | "sit" | "bow" | "snug" | "sniff";
 
-type PoseSpec = {
+export type PoseSpec = {
   shadow: number;
   body: { y: number; rotate: number; opacity: number };
   backLegs: number; // opacity of bf + bn
@@ -17,12 +17,13 @@ type PoseSpec = {
   haunch: { y: number; opacity: number };
   head: { x: number; y: number; rotate: number };
   ears: [number, number];
-  face: "open" | "happy";
+  /** 0 = eyes open, 1 = happy squint */
+  happy: number;
   tongue: number;
   ledge: number;
 };
 
-const POSES: Record<PupPose, PoseSpec> = {
+export const POSES: Record<PupPose, PoseSpec> = {
   peek: {
     shadow: 0,
     body: { y: 0, rotate: 0, opacity: 0 },
@@ -32,7 +33,7 @@ const POSES: Record<PupPose, PoseSpec> = {
     haunch: { y: 0, opacity: 0 },
     head: { x: 0, y: 4, rotate: 0 },
     ears: [-6, 6],
-    face: "open",
+    happy: 0,
     tongue: 1,
     ledge: 1,
   },
@@ -45,7 +46,7 @@ const POSES: Record<PupPose, PoseSpec> = {
     haunch: { y: 0, opacity: 0 },
     head: { x: 0, y: 0, rotate: 0 },
     ears: [0, 0],
-    face: "open",
+    happy: 0,
     tongue: 1,
     ledge: 0,
   },
@@ -58,7 +59,7 @@ const POSES: Record<PupPose, PoseSpec> = {
     haunch: { y: 1.44, opacity: 1 },
     head: { x: -10, y: -6, rotate: 0 },
     ears: [0, 0],
-    face: "open",
+    happy: 0,
     tongue: 1,
     ledge: 0,
   },
@@ -71,7 +72,7 @@ const POSES: Record<PupPose, PoseSpec> = {
     haunch: { y: -0.9, opacity: 0 },
     head: { x: 14, y: 30, rotate: 0 },
     ears: [0, 0],
-    face: "happy",
+    happy: 1,
     tongue: 1,
     ledge: 0,
   },
@@ -84,7 +85,7 @@ const POSES: Record<PupPose, PoseSpec> = {
     haunch: { y: 0, opacity: 0 },
     head: { x: 16, y: 32, rotate: 9 },
     ears: [0, 0],
-    face: "open",
+    happy: 0,
     tongue: 1,
     ledge: 0,
   },
@@ -97,7 +98,7 @@ const POSES: Record<PupPose, PoseSpec> = {
     haunch: { y: 0, opacity: 0 },
     head: { x: 0, y: 9, rotate: 4 },
     ears: [3, -3],
-    face: "open",
+    happy: 0,
     tongue: 0,
     ledge: 1,
   },
@@ -132,8 +133,19 @@ function Leg({ x, y, rotate = 0, opacity, fill, top, foot }: {
   );
 }
 
-export function Pup({ pose = "sit", label, facing = "right" }: { pose?: PupPose; label?: string; facing?: "left" | "right" }) {
-  const p = POSES[pose];
+export function Pup({
+  pose = "sit",
+  spec,
+  label,
+  facing = "right",
+}: {
+  pose?: PupPose;
+  /** An explicit (e.g. interpolated) pose; overrides `pose`. */
+  spec?: PoseSpec;
+  label?: string;
+  facing?: "left" | "right";
+}) {
+  const p = spec ?? POSES[pose];
   const a11y = label ? { role: "img", "aria-label": label } : { "aria-hidden": true as const };
   return (
     <svg viewBox="0 0 300 240" focusable="false" style={{ overflow: "visible" }} {...a11y}>
@@ -234,7 +246,7 @@ export function Pup({ pose = "sit", label, facing = "right" }: { pose?: PupPose;
           <circle cx="181" cy="116" r="7" fill="#f9b9a6" opacity="0.85" />
           <circle cx="243" cy="116" r="7" fill="#f9b9a6" opacity="0.85" />
           <g data-p="eyes">
-            <g data-p="open" opacity={p.face === "open" ? 1 : 0}>
+            <g data-p="open" opacity={1 - p.happy}>
               <g data-p="blink">
                 <ellipse cx="194" cy="98" rx="7.4" ry="8.6" fill={INK} />
                 <ellipse cx="230" cy="98" rx="7.4" ry="8.6" fill={INK} />
@@ -250,7 +262,7 @@ export function Pup({ pose = "sit", label, facing = "right" }: { pose?: PupPose;
             d="M186.5 101 Q194 91.5 201.5 101 M222.5 101 Q230 91.5 237.5 101"
             {...stroke}
             fill="none"
-            opacity={p.face === "happy" ? 1 : 0}
+            opacity={p.happy}
           />
           <path data-p="shut" d="M186.5 97 Q194 103.5 201.5 97 M222.5 97 Q230 103.5 237.5 97" {...stroke} fill="none" opacity={0} />
           <path d="M204.5 111.5 Q212 107.2 219.5 111.5 Q218.2 118.4 212 120 Q205.8 118.4 204.5 111.5 Z" fill={INK} />
@@ -337,4 +349,23 @@ export function PupBuddy({
       <span aria-hidden="true" className="pup-bubble" data-show="false" />
     </div>
   );
+}
+
+const mix = (a: number, b: number, t: number) => a + (b - a) * t;
+
+/** Blend two poses (t = 0 → a, t = 1 → b). */
+export function lerpPose(a: PoseSpec, b: PoseSpec, t: number): PoseSpec {
+  return {
+    shadow: mix(a.shadow, b.shadow, t),
+    body: { y: mix(a.body.y, b.body.y, t), rotate: mix(a.body.rotate, b.body.rotate, t), opacity: mix(a.body.opacity, b.body.opacity, t) },
+    backLegs: mix(a.backLegs, b.backLegs, t),
+    front: [mix(a.front[0], b.front[0], t), mix(a.front[1], b.front[1], t)],
+    tail: mix(a.tail, b.tail, t),
+    haunch: { y: mix(a.haunch.y, b.haunch.y, t), opacity: mix(a.haunch.opacity, b.haunch.opacity, t) },
+    head: { x: mix(a.head.x, b.head.x, t), y: mix(a.head.y, b.head.y, t), rotate: mix(a.head.rotate, b.head.rotate, t) },
+    ears: [mix(a.ears[0], b.ears[0], t), mix(a.ears[1], b.ears[1], t)],
+    happy: mix(a.happy, b.happy, t),
+    tongue: mix(a.tongue, b.tongue, t),
+    ledge: mix(a.ledge, b.ledge, t),
+  };
 }
