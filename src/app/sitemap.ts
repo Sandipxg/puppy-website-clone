@@ -1,16 +1,14 @@
 import type { MetadataRoute } from "next";
 import { puppies } from "@/data/puppies";
+import { cover } from "@/lib/puppies";
+import { siteUrl } from "@/lib/site";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const PAGES = ["/", "/puppies", "/gone-home", "/happy-families", "/how-it-works", "/faq", "/contact"];
 
+/** Every page, then every puppy profile with its cover photo (image sitemap). */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/puppies", "/gone-home", "/happy-families", "/how-it-works", "/faq", "/contact"];
   return [
-    ...pages.map((path) => ({ url: `${base}${path}`, changeFrequency: "weekly" as const, priority: path === "" ? 1 : 0.8 })),
-    ...puppies.map((p) => ({
-      url: `${base}/puppies/${p.slug}`,
-      changeFrequency: "weekly" as const,
-      priority: p.status === "available" ? 0.7 : 0.4,
-    })),
+    ...PAGES.map((path) => ({ url: `${siteUrl}${path}` })),
+    ...puppies.map((p) => ({ url: `${siteUrl}/puppies/${p.slug}`, images: [`${siteUrl}${cover(p).src}`] })),
   ];
 }

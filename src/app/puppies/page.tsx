@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Available puppies",
   description:
     "Teacup and teddy bear puppies available now in Dubai and imported from trusted breeders — every listing shows real photos of the puppy.",
+  alternates: { canonical: "/puppies" },
 };
 
 export default function PuppiesPage() {

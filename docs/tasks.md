@@ -71,6 +71,11 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Photo viewer resets when it leaves the page
 - [x] Mobile menu: closes on same-page links, close animation always plays
 
+## PR 13 — SEO parity `feat/seo-parity`
+- [x] Production site URL fallback (Vercel domain), canonical URLs
+- [x] JSON-LD: PetStore (home), BreadcrumbList (puppy profiles)
+- [x] Image sitemap, robots.txt, icons and share cards match the reference
+
 ## Open items
 - [ ] Add the showroom video file at `public/media/showroom/showroom-video.mp4` (the chat clip shows its poster until then)
-- [ ] Set `NEXT_PUBLIC_SITE_URL` and deploy (Vercel: import repo, no config needed)
+- [x] Deployed on Vercel (`NEXT_PUBLIC_SITE_URL` optional: it falls back to the Vercel production domain)
