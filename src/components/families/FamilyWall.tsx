@@ -40,7 +40,7 @@ export function FamilyWall() {
                       src={photo.src}
                       width={photo.width}
                       height={photo.height}
-                      sizes="(max-width: 768px) 46vw, (max-width: 1280px) 30vw, 22vw"
+                      sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 45vw"
                       style={{ width: "100%", height: "auto", backgroundColor: photo.color }}
                     />
                   </span>

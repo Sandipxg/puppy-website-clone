@@ -8,7 +8,7 @@ import { cover, goneHome } from "@/lib/puppies";
 
 export const metadata: Metadata = {
   title: "Gone home",
-  description: "Puppies who have already joined loving families through TeddyPups U.A.E.",
+  description: "TeddyPups puppies who have already joined their families.",
 };
 
 const TILTS = [-1.4, 1.1, -0.6, 1.6, -1.1, 0.8];
@@ -60,7 +60,7 @@ export default function GoneHomePage() {
                 <Link className="tp-ticket__link" href={`/puppies/${p.slug}`}>
                   <span className="tp-ticket__main">
                     <span className="tp-ticket__photo">
-                      <Photo img={cover(p)} sizes="110px" />
+                      <Photo img={cover(p)} sizes="7rem" />
                     </span>
                     <span className="tp-ticket__body">
                       <span className="font-scrawl tp-ticket__kicker">one ticket home</span>

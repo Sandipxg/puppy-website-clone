@@ -75,7 +75,7 @@ export function Families() {
                             src={photo.src}
                             width={photo.width}
                             height={photo.height}
-                            sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
+                            sizes="(min-width: 1024px) 18vw, (min-width: 640px) 28vw, 42vw"
                             style={{ backgroundColor: photo.color }}
                           />
                         </span>

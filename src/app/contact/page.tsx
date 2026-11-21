@@ -9,7 +9,8 @@ import { external, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Visit & contact",
-  description: "Write to TeddyPups, message us on WhatsApp, or visit our showroom in Downtown Dubai.",
+  description:
+    "Visit TeddyPups in Downtown Dubai or get in touch on WhatsApp, by phone or email.",
 };
 
 const SKYLINE =
@@ -86,7 +87,7 @@ export default function ContactPage() {
                     </a>
                   </div>
                   <figure className="tp-visit__photo">
-                    <Photo img={showroom[3]} sizes="176px" />
+                    <Photo img={showroom[3]} sizes="(min-width: 640px) 11rem, 90vw" />
                   </figure>
                 </div>
               </section>

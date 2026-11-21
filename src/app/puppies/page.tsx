@@ -9,7 +9,8 @@ import { goneHome } from "@/lib/puppies";
 
 export const metadata: Metadata = {
   title: "Available puppies",
-  description: "Real photos of every teacup and miniature puppy looking for a home with TeddyPups U.A.E. in Dubai.",
+  description:
+    "Teacup and teddy bear puppies available now in Dubai and imported from trusted breeders — every listing shows real photos of the puppy.",
 };
 
 export default function PuppiesPage() {

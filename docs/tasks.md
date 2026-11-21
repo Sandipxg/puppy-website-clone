@@ -59,6 +59,13 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] Forms + API tested (400 / 422 / honeypot / success)
 - [x] sitemap.xml, robots.txt, Open Graph + Twitter metadata, `.env.example`
 
+## PR 11 — Parity fixes `fix/parity-pass`
+- [x] Side-by-side comparison with the reference (1440 and 390, every page)
+- [x] Cascade layers match the reference (page styles unlayered)
+- [x] Portrait family photos had swapped dimensions — fixed
+- [x] How it works: both tab panels server-rendered
+- [x] Image `sizes` hints, page titles and descriptions match
+
 ## Open items
 - [ ] Add the showroom video file at `public/media/showroom/showroom-video.mp4` (the chat clip shows its poster until then)
 - [ ] Set `NEXT_PUBLIC_SITE_URL` and deploy (Vercel: import repo, no config needed)

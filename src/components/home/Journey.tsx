@@ -173,7 +173,7 @@ export function Journey() {
                   <div className="tp-snaps">
                     {showroom.map((img) => (
                       <span key={img.src} className="tp-snaps__one">
-                        <Photo img={img} sizes="96px" />
+                        <Photo img={img} sizes="9rem" />
                       </span>
                     ))}
                   </div>

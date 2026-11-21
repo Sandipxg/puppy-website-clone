@@ -36,3 +36,16 @@ Last run against the production build (`next build && next start`) with headless
 - Contact: empty submit → 2 field errors; valid submit → posted animation → thank-you
 - `/api/enquiry`: malformed → 400, invalid → 422 with field errors, honeypot → 200 (dropped), valid → 200 + WhatsApp link
 - Reduced motion: pinning, curtain, lineup rotation, roaming Teddy and scroll animations all disabled
+
+## Parity pass (PR 11)
+
+Measured every section's top and height on the reference and the clone with the same browser.
+
+| Page (390 × 844) | Reference | Clone |
+| --- | --- | --- |
+| Home | 12 904 | 12 904 |
+| Puppies | 5 639 | 5 639 |
+| How it works | 7 810 | 7 810 |
+| Happy families | 10 759 | 10 761 |
+
+Fixed along the way: cascade layer order, 14 portrait photos with swapped dimensions, the `measure` utility, server-rendered tab panels, `sizes` hints, and titles/descriptions on every page.

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @import "../styles/base.css" layer(base);
-/* Component styles sit in the components layer so utilities (e.g. md:hidden) still win. */
+/* Same cascade as the original: shared components in the components layer, page/scene styles unlayered. */
 @import "../styles/components.css" layer(components);
-@import "../styles/chrome.css" layer(components);
-@import "../styles/home.css" layer(components);
-@import "../styles/pages.css" layer(components);
+@import "../styles/chrome.css";
+@import "../styles/home.css";
+@import "../styles/pages.css";
 
 @theme {
   --color-cocoa: #2a170e;
@@ -60,6 +60,9 @@
 @utility text-lede {
   font-size: clamp(1.125rem, 1.4vw, 1.375rem);
   line-height: 1.5;
+}
+@utility measure {
+  max-width: 62ch;
 }
 @utility text-big {
   font-size: clamp(2rem, 4.2vw, 4rem);

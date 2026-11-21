@@ -36,7 +36,7 @@ export function TwoWays() {
               </svg>
               <figure className="tp-window">
                 <span className="tp-window__glass">
-                  <Photo img={showroom[0]} sizes="200px" />
+                  <Photo img={showroom[0]} sizes="(min-width: 1024px) 16rem, 60vw" />
                 </span>
                 <figcaption className="font-scrawl">In our showroom</figcaption>
               </figure>

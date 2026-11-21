@@ -26,7 +26,7 @@ export function Porch() {
         <span aria-hidden="true" className="tp-house__lamp" />
         <div className="tp-house__doorway">
           <span className="tp-house__inside">
-            {max && <Photo img={cover(max)} alt={`${max.name}, waiting inside`} sizes="200px" />}
+            {max && <Photo img={cover(max)} alt={`${max.name}, waiting inside`} sizes="16rem" />}
           </span>
           <span aria-hidden="true" className="tp-house__door">
             <span className="tp-house__peep" />

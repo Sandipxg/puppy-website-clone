@@ -151,22 +151,22 @@ export const families: FamilyPhoto[] = [
   },
   {
     "src": "/media/families/22.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#080808",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/23.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#b8a888",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/24.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#c8b8a8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
@@ -179,36 +179,36 @@ export const families: FamilyPhoto[] = [
   },
   {
     "src": "/media/families/26.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#a88878",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/27.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#080808",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/28.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#d8c8b8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/29.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#d8c8b8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/30.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#d8c8a8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
@@ -249,8 +249,8 @@ export const families: FamilyPhoto[] = [
   },
   {
     "src": "/media/families/36.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#c8b898",
     "alt": "A happy TeddyPups family with their new puppy"
   },
@@ -263,29 +263,29 @@ export const families: FamilyPhoto[] = [
   },
   {
     "src": "/media/families/38.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#d8c8b8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/39.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#181818",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/40.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#d8c8b8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
   {
     "src": "/media/families/41.jpg",
-    "width": 2856,
-    "height": 2142,
+    "width": 2142,
+    "height": 2856,
     "color": "#d8c8a8",
     "alt": "A happy TeddyPups family with their new puppy"
   },
@@ -312,8 +312,8 @@ export const families: FamilyPhoto[] = [
   },
   {
     "src": "/media/families/45.jpg",
-    "width": 640,
-    "height": 480,
+    "width": 480,
+    "height": 640,
     "color": "#d8b8a8",
     "alt": "A happy TeddyPups family with their new puppy"
   },

@@ -70,7 +70,7 @@ export function Gallery({ name, items }: { name: string; items: GalleryItem[] })
       <div className="tp-storypage relative aspect-[4/5] md:aspect-[5/6]">
         {item.type === "video" ? (
           <div key={turn} className="tp-page-turn absolute inset-0">
-            <Slide item={item} sizes="(max-width: 1024px) 100vw, 58vw" />
+            <Slide item={item} sizes="(min-width: 1024px) 55vw, 92vw" />
           </div>
         ) : (
           <button
@@ -80,7 +80,7 @@ export function Gallery({ name, items }: { name: string; items: GalleryItem[] })
             aria-label={`Open ${name}, photo ${index + 1} of ${items.length} full screen`}
             onClick={() => setFull(true)}
           >
-            <Slide item={item} sizes="(max-width: 1024px) 100vw, 58vw" priority={index === 0} />
+            <Slide item={item} sizes="(min-width: 1024px) 55vw, 92vw" priority={index === 0} />
           </button>
         )}
         {items.length > 1 && (

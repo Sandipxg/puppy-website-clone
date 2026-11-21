@@ -123,7 +123,7 @@ export function MeetThePups() {
                     </span>
                     <span className="tp-door__frame">
                       <span className="tp-door__room">
-                        <Photo img={cover(p)} sizes="(max-width: 768px) 45vw, 260px" />
+                        <Photo img={cover(p)} sizes="(min-width: 1024px) 15rem, 44vw" />
                       </span>
                       <span aria-hidden="true" className="tp-door__way">
                         <span className="tp-door__leaf">

@@ -48,7 +48,7 @@ export function SketchCard({ puppy, index, small = false }: { puppy: Puppy; inde
           <path d={s.wash} />
         </svg>
         <span className="tp-sketch__photo" style={{ maskImage: mask, WebkitMaskImage: mask }}>
-          <Photo img={cover(puppy)} alt="" sizes={small ? "140px" : "(max-width: 640px) 45vw, 280px"} />
+          <Photo img={cover(puppy)} alt="" sizes={small ? "9rem" : "(min-width: 1536px) 17rem, (min-width: 1024px) 22vw, (min-width: 640px) 30vw, 46vw"} />
         </span>
         <svg aria-hidden="true" viewBox="0 0 100 100" className="tp-sketch__ink">
           <path d={s.line} pathLength={1} className="tp-sketch__line" />
