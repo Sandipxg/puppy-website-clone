@@ -17,6 +17,10 @@ export function PhotoViewer() {
     if (!photo && d.open) d.close();
   }, [photo]);
 
+  // The store outlives this component: close on unmount so the viewer
+  // never reopens by itself on the next page (e.g. after Back with it open).
+  useEffect(() => () => useViewer.getState().close(), []);
+
   useEffect(() => {
     if (!photo) return;
     const onKey = (e: KeyboardEvent) => {

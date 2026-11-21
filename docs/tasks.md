@@ -66,6 +66,11 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] How it works: both tab panels server-rendered
 - [x] Image `sizes` hints, page titles and descriptions match
 
+## PR 12 — Review fixes `fix/review-findings`
+- [x] Enquiry API: 400 for non-text fields, forward known fields only
+- [x] Photo viewer resets when it leaves the page
+- [x] Mobile menu: closes on same-page links, close animation always plays
+
 ## Open items
 - [ ] Add the showroom video file at `public/media/showroom/showroom-video.mp4` (the chat clip shows its poster until then)
 - [ ] Set `NEXT_PUBLIC_SITE_URL` and deploy (Vercel: import repo, no config needed)
