@@ -34,19 +34,28 @@ function MobileMenu({ pathname }: { pathname: string }) {
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    if (menuOpen && !dialog.open) {
+    if (menuOpen) {
+      // Re-opened mid-close: cancel the close animation.
       dialog.removeAttribute("data-closing");
-      dialog.showModal();
+      if (!dialog.open) dialog.showModal();
     } else if (!menuOpen && dialog.open) {
       // Play the circle-close animation, then actually close.
       dialog.setAttribute("data-closing", "");
       const done = () => {
+        dialog.removeEventListener("animationend", onEnd);
         dialog.removeAttribute("data-closing");
         dialog.close();
       };
+      // Only the dialog's own close animation counts, not the links' entrance animations bubbling up.
+      const onEnd = (e: AnimationEvent) => {
+        if (e.target === dialog && e.animationName === "tp-menu-out") done();
+      };
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) done();
-      else dialog.addEventListener("animationend", done, { once: true });
+      else {
+        dialog.addEventListener("animationend", onEnd);
+        return () => dialog.removeEventListener("animationend", onEnd);
+      }
     }
   }, [menuOpen]);
 
@@ -84,6 +93,7 @@ function MobileMenu({ pathname }: { pathname: string }) {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     data-active={active}
+                    onClick={() => setMenuOpen(false)}
                     className="tp-menu-link font-plush block py-2 text-[clamp(2.4rem,11vw,3.4rem)]"
                   >
                     <span>{item.label}</span>
