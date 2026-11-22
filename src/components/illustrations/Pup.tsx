@@ -138,18 +138,30 @@ export function Pup({
   spec,
   label,
   facing = "right",
+  flip,
 }: {
   pose?: PupPose;
   /** An explicit (e.g. interpolated) pose; overrides `pose`. */
   spec?: PoseSpec;
   label?: string;
   facing?: "left" | "right";
+  /** Horizontal scale from -1 (facing left) to 1 (facing right), for an animated turn; overrides `facing`. */
+  flip?: number;
 }) {
   const p = spec ?? POSES[pose];
   const a11y = label ? { role: "img", "aria-label": label } : { "aria-hidden": true as const };
   return (
     <svg viewBox="0 0 300 240" focusable="false" style={{ overflow: "visible" }} {...a11y}>
-      <g data-p="root" transform={facing === "left" ? "translate(300 0) scale(-1 1)" : undefined}>
+      <g
+        data-p="root"
+        transform={
+          flip !== undefined
+            ? `translate(150 0) scale(${flip.toFixed(3)} 1) translate(-150 0)`
+            : facing === "left"
+              ? "translate(300 0) scale(-1 1)"
+              : undefined
+        }
+      >
         <ellipse data-p="shadow" cx="150" cy="230" rx="92" ry="7" fill={INK} opacity={p.shadow} />
         <g
           data-p="body"

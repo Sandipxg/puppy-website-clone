@@ -76,6 +76,10 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 - [x] JSON-LD: PetStore (home), BreadcrumbList (puppy profiles)
 - [x] Image sitemap, robots.txt, icons and share cards match the reference
 
+## PR 14 — Mobile Teddy `feat/mobile-teddy-lane`
+- [x] Lane mode on phones/touch: peeks over the bottom bar, swaps sides per scene, ends in the basket
+- [x] Smooth turn-around (`flip`), desktop street mode unchanged
+
 ## Open items
 - [ ] Add the showroom video file at `public/media/showroom/showroom-video.mp4` (the chat clip shows its poster until then)
 - [x] Deployed on Vercel (`NEXT_PUBLIC_SITE_URL` optional: it falls back to the Vercel production domain)
