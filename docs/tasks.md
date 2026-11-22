@@ -79,6 +79,7 @@ Live tracker. `[x]` done · `[~]` in progress · `[ ]` next. Each milestone maps
 ## PR 14 — Mobile Teddy `feat/mobile-teddy-lane`
 - [x] Lane mode on phones/touch: peeks over the bottom bar, swaps sides per scene, ends in the basket
 - [x] Smooth turn-around (`flip`), desktop street mode unchanged
+- [x] Live Teddy everywhere: breathing, tail wag, blinks, head tilts, "hm?"; tap for tricks with speech bubbles
 
 ## Open items
 - [ ] Add the showroom video file at `public/media/showroom/showroom-video.mp4` (the chat clip shows its poster until then)

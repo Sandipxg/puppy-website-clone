@@ -6,6 +6,8 @@
  * poses is just interpolating these numbers.
  */
 
+import { LivePup } from "./LivePup";
+
 export type PupPose = "peek" | "walk" | "sit" | "bow" | "snug" | "sniff";
 
 export type PoseSpec = {
@@ -139,6 +141,9 @@ export function Pup({
   label,
   facing = "right",
   flip,
+  blink = 0,
+  shut = 0,
+  lift = 0,
 }: {
   pose?: PupPose;
   /** An explicit (e.g. interpolated) pose; overrides `pose`. */
@@ -147,6 +152,12 @@ export function Pup({
   facing?: "left" | "right";
   /** Horizontal scale from -1 (facing left) to 1 (facing right), for an animated turn; overrides `facing`. */
   flip?: number;
+  /** 0 = eyes open … 1 = closed (a blink). */
+  blink?: number;
+  /** Opacity of the squeezed-shut eyes (e.g. a sneeze). */
+  shut?: number;
+  /** Lift the whole pup off the ground, in rig units (a jump). */
+  lift?: number;
 }) {
   const p = spec ?? POSES[pose];
   const a11y = label ? { role: "img", "aria-label": label } : { "aria-hidden": true as const };
@@ -155,11 +166,16 @@ export function Pup({
       <g
         data-p="root"
         transform={
-          flip !== undefined
-            ? `translate(150 0) scale(${flip.toFixed(3)} 1) translate(-150 0)`
-            : facing === "left"
-              ? "translate(300 0) scale(-1 1)"
-              : undefined
+          [
+            lift ? `translate(0 ${(-lift).toFixed(2)})` : "",
+            flip !== undefined
+              ? `translate(150 0) scale(${flip.toFixed(3)} 1) translate(-150 0)`
+              : facing === "left"
+                ? "translate(300 0) scale(-1 1)"
+                : "",
+          ]
+            .join(" ")
+            .trim() || undefined
         }
       >
         <ellipse data-p="shadow" cx="150" cy="230" rx="92" ry="7" fill={INK} opacity={p.shadow} />
@@ -258,8 +274,11 @@ export function Pup({
           <circle cx="181" cy="116" r="7" fill="#f9b9a6" opacity="0.85" />
           <circle cx="243" cy="116" r="7" fill="#f9b9a6" opacity="0.85" />
           <g data-p="eyes">
-            <g data-p="open" opacity={1 - p.happy}>
-              <g data-p="blink">
+            <g data-p="open" opacity={Math.max(0, 1 - p.happy - shut)}>
+              <g
+                data-p="blink"
+                transform={blink ? `translate(0 ${(97.5 * 0.91 * blink).toFixed(2)}) scale(1 ${(1 - 0.91 * blink).toFixed(3)})` : undefined}
+              >
                 <ellipse cx="194" cy="98" rx="7.4" ry="8.6" fill={INK} />
                 <ellipse cx="230" cy="98" rx="7.4" ry="8.6" fill={INK} />
                 <circle cx="196.6" cy="94.6" r="2.7" fill="#fff" />
@@ -276,7 +295,7 @@ export function Pup({
             fill="none"
             opacity={p.happy}
           />
-          <path data-p="shut" d="M186.5 97 Q194 103.5 201.5 97 M222.5 97 Q230 103.5 237.5 97" {...stroke} fill="none" opacity={0} />
+          <path data-p="shut" d="M186.5 97 Q194 103.5 201.5 97 M222.5 97 Q230 103.5 237.5 97" {...stroke} fill="none" opacity={shut} />
           <path d="M204.5 111.5 Q212 107.2 219.5 111.5 Q218.2 118.4 212 120 Q205.8 118.4 204.5 111.5 Z" fill={INK} />
           <path
             d="M212 120 V124.5 M212 124.5 Q207.2 129.6 202.8 125.2 M212 124.5 Q216.8 129.6 221.2 125.2"
@@ -335,10 +354,7 @@ export function PupStop({
       data-behind={behind ? "true" : undefined}
       className={`pup-stop ${className ?? ""}`}
     >
-      <div className="pup-buddy" data-facing="right">
-        <Pup pose={pose} label={label} />
-        <span aria-hidden="true" className="pup-bubble" data-show="false" />
-      </div>
+      <LivePup pose={pose} label={label} />
     </div>
   );
 }
@@ -355,12 +371,7 @@ export function PupBuddy({
   label?: string;
   facing?: "left" | "right";
 }) {
-  return (
-    <div className={`pup-buddy ${className ?? ""}`} data-facing={facing}>
-      <Pup pose={pose} label={label} facing={facing} />
-      <span aria-hidden="true" className="pup-bubble" data-show="false" />
-    </div>
-  );
+  return <LivePup pose={pose} label={label} facing={facing} className={className} />;
 }
 
 const mix = (a: number, b: number, t: number) => a + (b - a) * t;
